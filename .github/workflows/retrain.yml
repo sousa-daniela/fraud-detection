@@ -1,0 +1,50 @@
+name: Monthly Model Retraining
+
+on:
+  schedule:
+    - cron: '*/5 * * * *' 
+    # - cron: '0 0 1 * *' # Runs at 00:00 on the 1st day of every month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Determine next month to retrain
+        id: month
+        run: |
+          current=$(cat last_retrained_month.txt || echo 0)
+          next=$((current + 1))
+          echo "month_number=$next" >> $GITHUB_OUTPUT
+
+      - name: Run retraining script
+        env:
+          MLFLOW_TRACKING_URI: ${{ secrets.MLFLOW_TRACKING_URI }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: python retrain_model.py data/df_remaining/month_${{ steps.month.outputs.month_number }}.csv
+
+      # Track which month was last used
+      - name: Commit updated state file
+        run: |
+          echo ${{ steps.month.outputs.month_number }} > last_retrained_month.txt
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add last_retrained_month.txt
+          git diff-index --quiet HEAD || git commit -m "Update last retrained month to ${{ steps.month.outputs.month_number }}"
+          git push
