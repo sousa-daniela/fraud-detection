@@ -1,0 +1,77 @@
+{
+    "new_features": [
+        {
+            "feature1": "REGION_RATING_CLIENT",
+            "feature2": "CODE_GENDER",
+            "operation": "sum",
+            "score": 0.5496280901
+        },
+        {
+            "feature1": "NAME_INCOME_TYPE_Working",
+            "feature2": "REGION_RATING_CLIENT",
+            "operation": "sum",
+            "score": 0.5507147741
+        },
+        {
+            "feature1": "REGION_RATING_CLIENT",
+            "feature2": "NAME_INCOME_TYPE_Retired",
+            "operation": "diff",
+            "score": 0.5510687039
+        },
+        {
+            "feature1": "REGION_RATING_CLIENT",
+            "feature2": "FLAG_EMP_PHONE",
+            "operation": "sum",
+            "score": 0.5510687039
+        },
+        {
+            "feature1": "NAME_EDUCATION_TYPE_Secondary",
+            "feature2": "REGION_RATING_CLIENT",
+            "operation": "sum",
+            "score": 0.5514808292
+        },
+        {
+            "feature1": "REGION_RATING_CLIENT",
+            "feature2": "NAME_EDUCATION_TYPE_Secondary",
+            "operation": "ratio",
+            "score": 0.5522042732
+        },
+        {
+            "feature1": "NAME_EDUCATION_TYPE_Secondary",
+            "feature2": "REGION_RATING_CLIENT",
+            "operation": "ratio",
+            "score": 0.5522042732
+        },
+        {
+            "feature1": "NAME_EDUCATION_TYPE_Secondary",
+            "feature2": "REGION_RATING_CLIENT",
+            "operation": "multiply",
+            "score": 0.5522042732
+        },
+        {
+            "feature1": "REGION_RATING_CLIENT",
+            "feature2": "FLAG_EMP_PHONE",
+            "operation": "multiply",
+            "score": 0.5529109066
+        },
+        {
+            "feature1": "REGION_RATING_CLIENT",
+            "feature2": "FLAG_EMP_PHONE",
+            "operation": "ratio",
+            "score": 0.5529109066
+        }
+    ],
+    "new_columns": [
+        "REGION_RATING_CLIENT_sum_CODE_GENDER",
+        "NAME_INCOME_TYPE_Working_sum_REGION_RATING_CLIENT",
+        "REGION_RATING_CLIENT_diff_NAME_INCOME_TYPE_Retired",
+        "REGION_RATING_CLIENT_sum_FLAG_EMP_PHONE",
+        "NAME_EDUCATION_TYPE_Secondary_sum_REGION_RATING_CLIENT",
+        "REGION_RATING_CLIENT_ratio_NAME_EDUCATION_TYPE_Secondary",
+        "NAME_EDUCATION_TYPE_Secondary_ratio_REGION_RATING_CLIENT",
+        "NAME_EDUCATION_TYPE_Secondary_multiply_REGION_RATING_CLIENT",
+        "REGION_RATING_CLIENT_multiply_FLAG_EMP_PHONE",
+        "REGION_RATING_CLIENT_ratio_FLAG_EMP_PHONE"
+    ],
+    "ml_task": "binary_classification"
+}

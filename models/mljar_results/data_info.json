@@ -1,0 +1,178 @@
+{
+    "columns": [
+        "NAME_CONTRACT_TYPE",
+        "CODE_GENDER",
+        "FLAG_OWN_CAR",
+        "FLAG_OWN_REALTY",
+        "CNT_CHILDREN",
+        "AMT_INCOME_TOTAL",
+        "AMT_CREDIT",
+        "AMT_ANNUITY",
+        "AMT_GOODS_PRICE",
+        "DAYS_BIRTH",
+        "DAYS_EMPLOYED",
+        "DAYS_REGISTRATION",
+        "CNT_FAM_MEMBERS",
+        "FLAG_EMP_PHONE",
+        "FLAG_WORK_PHONE",
+        "FLAG_CONT_MOBILE",
+        "FLAG_EMAIL",
+        "REGION_RATING_CLIENT",
+        "REG_REGION_NOT_LIVE_REGION",
+        "PREV_AMT_CREDIT_mean",
+        "PREV_AMT_CREDIT_max",
+        "PREV_CNT_PAYMENT_mean",
+        "PREV_NFLAG_LAST_APPL_IN_DAY_sum",
+        "PREV_DAYS_DECISION_mean",
+        "PREV_NAME_CONTRACT_STATUS_Approved_sum",
+        "PREV_NAME_CONTRACT_STATUS_Refused_sum",
+        "PREV_NAME_CONTRACT_STATUS_Canceled_sum",
+        "PREV_NAME_CONTRACT_STATUS_Unused offer_sum",
+        "PREV_NAME_CLIENT_TYPE_New_sum",
+        "PREV_NAME_CLIENT_TYPE_Repeater_sum",
+        "PREV_NAME_CLIENT_TYPE_Refreshed_sum",
+        "PREV_NAME_CLIENT_TYPE_XNA_sum",
+        "NAME_FAMILY_STATUS_Married",
+        "NAME_FAMILY_STATUS_Separated",
+        "NAME_FAMILY_STATUS_Single / not married",
+        "NAME_FAMILY_STATUS_Widow",
+        "NAME_INCOME_TYPE_Public",
+        "NAME_INCOME_TYPE_Retired",
+        "NAME_INCOME_TYPE_Working",
+        "NAME_EDUCATION_TYPE_Lower",
+        "NAME_EDUCATION_TYPE_Secondary",
+        "NAME_HOUSING_TYPE_Stable",
+        "NAME_HOUSING_TYPE_With parents",
+        "OCCUPATION_TYPE_Service",
+        "OCCUPATION_TYPE_Unknown",
+        "OCCUPATION_TYPE_White collar",
+        "ORGANIZATION_TYPE_Business",
+        "ORGANIZATION_TYPE_Government",
+        "ORGANIZATION_TYPE_Health/Education",
+        "ORGANIZATION_TYPE_Industry",
+        "ORGANIZATION_TYPE_Services",
+        "ORGANIZATION_TYPE_Trade",
+        "ORGANIZATION_TYPE_Transport",
+        "CREDIT_TO_INCOME"
+    ],
+    "rows": 55561,
+    "cols": 54,
+    "target_is_numeric": true,
+    "columns_info": {
+        "NAME_CONTRACT_TYPE": [],
+        "CODE_GENDER": [],
+        "FLAG_OWN_CAR": [],
+        "FLAG_OWN_REALTY": [
+            "scale"
+        ],
+        "CNT_CHILDREN": [],
+        "AMT_INCOME_TOTAL": [
+            "scale"
+        ],
+        "AMT_CREDIT": [
+            "scale"
+        ],
+        "AMT_ANNUITY": [
+            "scale"
+        ],
+        "AMT_GOODS_PRICE": [
+            "scale"
+        ],
+        "DAYS_BIRTH": [
+            "scale"
+        ],
+        "DAYS_EMPLOYED": [
+            "scale"
+        ],
+        "DAYS_REGISTRATION": [
+            "scale"
+        ],
+        "CNT_FAM_MEMBERS": [
+            "scale"
+        ],
+        "FLAG_EMP_PHONE": [
+            "scale"
+        ],
+        "FLAG_WORK_PHONE": [],
+        "FLAG_CONT_MOBILE": [
+            "scale"
+        ],
+        "FLAG_EMAIL": [],
+        "REGION_RATING_CLIENT": [
+            "scale"
+        ],
+        "REG_REGION_NOT_LIVE_REGION": [],
+        "PREV_AMT_CREDIT_mean": [
+            "scale"
+        ],
+        "PREV_AMT_CREDIT_max": [
+            "scale"
+        ],
+        "PREV_CNT_PAYMENT_mean": [
+            "scale"
+        ],
+        "PREV_NFLAG_LAST_APPL_IN_DAY_sum": [
+            "scale"
+        ],
+        "PREV_DAYS_DECISION_mean": [
+            "scale"
+        ],
+        "PREV_NAME_CONTRACT_STATUS_Approved_sum": [
+            "scale"
+        ],
+        "PREV_NAME_CONTRACT_STATUS_Refused_sum": [
+            "scale"
+        ],
+        "PREV_NAME_CONTRACT_STATUS_Canceled_sum": [
+            "scale"
+        ],
+        "PREV_NAME_CONTRACT_STATUS_Unused offer_sum": [],
+        "PREV_NAME_CLIENT_TYPE_New_sum": [
+            "scale"
+        ],
+        "PREV_NAME_CLIENT_TYPE_Repeater_sum": [
+            "scale"
+        ],
+        "PREV_NAME_CLIENT_TYPE_Refreshed_sum": [],
+        "PREV_NAME_CLIENT_TYPE_XNA_sum": [],
+        "NAME_FAMILY_STATUS_Married": [
+            "scale"
+        ],
+        "NAME_FAMILY_STATUS_Separated": [],
+        "NAME_FAMILY_STATUS_Single / not married": [],
+        "NAME_FAMILY_STATUS_Widow": [],
+        "NAME_INCOME_TYPE_Public": [],
+        "NAME_INCOME_TYPE_Retired": [],
+        "NAME_INCOME_TYPE_Working": [
+            "scale"
+        ],
+        "NAME_EDUCATION_TYPE_Lower": [],
+        "NAME_EDUCATION_TYPE_Secondary": [
+            "scale"
+        ],
+        "NAME_HOUSING_TYPE_Stable": [
+            "scale"
+        ],
+        "NAME_HOUSING_TYPE_With parents": [],
+        "OCCUPATION_TYPE_Service": [],
+        "OCCUPATION_TYPE_Unknown": [],
+        "OCCUPATION_TYPE_White collar": [],
+        "ORGANIZATION_TYPE_Business": [
+            "scale"
+        ],
+        "ORGANIZATION_TYPE_Government": [],
+        "ORGANIZATION_TYPE_Health/Education": [],
+        "ORGANIZATION_TYPE_Industry": [],
+        "ORGANIZATION_TYPE_Services": [],
+        "ORGANIZATION_TYPE_Trade": [],
+        "ORGANIZATION_TYPE_Transport": [],
+        "CREDIT_TO_INCOME": [
+            "scale"
+        ]
+    },
+    "target_info": [],
+    "n_features": 54,
+    "is_sample_weighted": false,
+    "is_fairness_applied": false,
+    "n_classes": 2
+}
