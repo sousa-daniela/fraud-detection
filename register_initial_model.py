@@ -69,6 +69,21 @@ with mlflow.start_run(run_name="Initial XGBoost Production Model") as run:
         version=new_version
         )
     
+# 4. Seed the initial training data to S3
+print("Uploading initial training data to S3 to seed the process...")
+
+# Define the S3 path where the retraining script will look for the data
+s3_bucket = "dss-fraud-detection"
+training_path_s3 = f"s3://{s3_bucket}/training_data/df_training_current.csv"
+
+# Load your local, initial, balanced training data.
+# This file should be the large, balanced set you started with.
+initial_training_df = pd.read_csv("data/df_training_current.csv")
+
+# Upload this file to S3
+initial_training_df.to_csv(training_path_s3, index=False)
+
+print(f"Initial training data successfully seeded to {training_path_s3}")
 print("Initial model registration complete.")
 
 # Run mlflow server --backend-store-uri "postgresql://neondb_owner:..." --default-artifact-root "s3://dss-fraud-detection" --host 0.0.0.0 --port 5500
