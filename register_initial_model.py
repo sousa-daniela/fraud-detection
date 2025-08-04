@@ -71,6 +71,6 @@ with mlflow.start_run(run_name="Initial XGBoost Production Model") as run:
     
 print("Initial model registration complete.")
 
-# Run mlflow server --backend-store-uri "postgresql://neondb_owner:npg_c0iPKGM4tXhQ@ep-quiet-forest-a29wt3ze-pooler.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require" --default-artifact-root "s3://dss-fraud-detection" --host 0.0.0.0 --port 5500
+# Run mlflow server --backend-store-uri "postgresql://neondb_owner:..." --default-artifact-root "s3://dss-fraud-detection" --host 0.0.0.0 --port 5500
 # Run python register_initial_model.py
 # MLflow UI: http://127.0.1:5500
