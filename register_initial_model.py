@@ -86,6 +86,7 @@ initial_training_df.to_csv(training_path_s3, index=False)
 print(f"Initial training data successfully seeded to {training_path_s3}")
 print("Initial model registration complete.")
 
+# Run source .env
 # Run mlflow server --backend-store-uri "postgresql://neondb_owner:..." --default-artifact-root "s3://dss-fraud-detection" --host 0.0.0.0 --port 5500
 # Run python register_initial_model.py
 # MLflow UI: http://127.0.1:5500
