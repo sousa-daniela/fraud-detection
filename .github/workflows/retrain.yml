@@ -37,9 +37,16 @@ jobs:
           MLFLOW_TRACKING_URI: ${{ secrets.MLFLOW_TRACKING_URI }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: python retrain_model.py data/df_remaining/month_${{ steps.month.outputs.month_number }}.csv
+          AWS_DEFAULT_REGION: 'eu-north-1'
+        run: |
+          MONTH_FILE="month_${{ steps.month.outputs.month_number }}.csv"
 
-      # Track which month was last used
+          echo "Downloading $MONTH_FILE from S3..."
+          aws s3 cp "s3://dss-fraud-detection/df_remaining/$MONTH_FILE" "./$MONTH_FILE"
+
+          echo "Running retraining script..."
+          python retrain_model.py "./$MONTH_FILE"
+
       - name: Commit updated state file
         run: |
           echo ${{ steps.month.outputs.month_number }} > last_retrained_month.txt
