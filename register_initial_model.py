@@ -76,8 +76,7 @@ print("Uploading initial training data to S3 to seed the process...")
 s3_bucket = "dss-fraud-detection"
 training_path_s3 = f"s3://{s3_bucket}/training_data/df_training_current.csv"
 
-# Load your local, initial, balanced training data.
-# This file should be the large, balanced set you started with.
+# Load local, initial, balanced training data.
 initial_training_df = pd.read_csv("data/df_training_current.csv")
 
 # Upload this file to S3
