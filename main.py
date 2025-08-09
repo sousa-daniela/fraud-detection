@@ -13,9 +13,6 @@ load_dotenv()
 
 mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI"))
 
-# Load the production version of the trained XGBoost fraud detection model
-model = mlflow.sklearn.load_model("models:/xgboost_fraud_detector@prod")
-
 # Initialize FastAPI app instance
 app = FastAPI()
 
