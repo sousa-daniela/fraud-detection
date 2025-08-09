@@ -132,7 +132,7 @@ The primary focus of this project is the design and implementation of the MLOps 
 
 ## Dataset Source
 
-Credit Card Fraud Detection – [Kaggle](https://www.kaggle.com/c/home-credit-default-risk)
+Credit Card Fraud Detection – [Kaggle](https://www.kaggle.com/datasets/mishra5001/credit-card)
 
 ## License
 
