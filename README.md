@@ -64,7 +64,7 @@ To run this project, a local setup and cloud infrastructure are required.
 ### 1. Local Environment Setup
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/sousa-daniela/fraud-detection.git](https://github.com/sousa-daniela/fraud-detection.git)
+    git clone https://github.com/sousa-daniela/fraud-detection.git
     cd fraud-detection
     ```
 2.  **Create and Activate a Virtual Environment:**
