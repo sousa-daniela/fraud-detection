@@ -125,7 +125,7 @@ Ensure you have sourced your environment variables before running commands: `sou
     ```
 3.  **Start the Prediction API:**
     ```bash
-    uvicorn main:app --reload
+    uvicorn src.api.main:app --reload --host 127.0.0.1 --port 8000
     ```
 
 ---
