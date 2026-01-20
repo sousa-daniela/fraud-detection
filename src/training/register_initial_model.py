@@ -1,4 +1,5 @@
 # Import libraries and modules
+from pathlib import Path
 import os
 import joblib
 import mlflow
@@ -13,9 +14,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Load pre-trained model and test data
-xgb_model = joblib.load("models/xgb_model.joblib")
-X_test = joblib.load("data/train-test-splits/X_test.pkl")
-y_test = joblib.load("data/train-test-splits/y_test.pkl")
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+MODEL_PATH = PROJECT_ROOT / "models" / "production" / "xgb_model.joblib"
+SPLITS_DIR = PROJECT_ROOT / "data" / "training" / "train_test_splits"
+
+xgb_model = joblib.load(MODEL_PATH)
+X_test = joblib.load(SPLITS_DIR / "X_test.pkl")
+y_test = joblib.load(SPLITS_DIR / "y_test.pkl")
 
 # Set up MLflow tracking
 mlflow_tracking_uri = os.getenv("MLFLOW_TRACKING_URI", "http://127.0.0.1:5500")
