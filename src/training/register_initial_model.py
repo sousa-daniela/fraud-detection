@@ -1,5 +1,6 @@
 # Import libraries and modules
 from pathlib import Path
+import pandas as pd
 import os
 import joblib
 import mlflow
@@ -14,9 +15,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Load pre-trained model and test data
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 MODEL_PATH = PROJECT_ROOT / "models" / "xgb_model.joblib"
-SPLITS_DIR = PROJECT_ROOT / "data" / "train_test_splits"
+SPLITS_DIR = PROJECT_ROOT / "data" / "train-test-splits"
 
 xgb_model = joblib.load(MODEL_PATH)
 X_test = joblib.load(SPLITS_DIR / "X_test.pkl")
@@ -82,7 +83,7 @@ s3_bucket = "dss-fraud-detection"
 training_path_s3 = f"s3://{s3_bucket}/training_data/df_training_current.csv"
 
 # Load local, initial, balanced training data.
-initial_training_df = pd.read_csv("data/df_training_current.csv")
+initial_training_df = pd.read_csv(PROJECT_ROOT / "data" / "df_train_balanced.csv")
 
 # Upload this file to S3
 initial_training_df.to_csv(training_path_s3, index=False)
@@ -92,5 +93,5 @@ print("Initial model registration complete.")
 
 # Run source .env
 # Run mlflow server --backend-store-uri $MLFLOW_TRACKING_URI --default-artifact-root "s3://dss-fraud-detection" --host 0.0.0.0 --port 5500
-# Run python register_initial_model.py
+# Run python src/training/register_initial_model.py
 # MLflow UI: http://127.0.1:5500
