@@ -15,8 +15,8 @@ load_dotenv()
 
 # Load pre-trained model and test data
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-MODEL_PATH = PROJECT_ROOT / "models" / "production" / "xgb_model.joblib"
-SPLITS_DIR = PROJECT_ROOT / "data" / "training" / "train_test_splits"
+MODEL_PATH = PROJECT_ROOT / "models" / "xgb_model.joblib"
+SPLITS_DIR = PROJECT_ROOT / "data" / "train_test_splits"
 
 xgb_model = joblib.load(MODEL_PATH)
 X_test = joblib.load(SPLITS_DIR / "X_test.pkl")
