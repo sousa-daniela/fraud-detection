@@ -2,6 +2,8 @@
 
 **Author:** Daniela de Sousa Silva
 
+## **2026-01-20:** Work in progress - Docker integration is currently being implemented.
+
 ## Description
 
 This project implements a complete, end-to-end MLOps pipeline for a fraud detection system. The scenario is a government agency that needs to automate the detection of suspicious funding applications to ensure support reaches those in need.
