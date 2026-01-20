@@ -32,22 +32,26 @@ The repository is organized as follows:
 fraud-detection/
 │
 ├── .github/workflows/
-│   └── retrain.yml                  # GitHub Actions workflow for automated retraining
+│   └── retrain.yml                   # GitHub Actions workflow for automated retraining
 ├── data/
-│   ├── train-test-splits/           # Pickled data splits for the initial model
-│   └── df_train_balanced.csv        # Original initial balanced training set (see Notebook Section 2.1)
-│   └── final_cleaned_data.csv       # Cleaned dataset for easy reproducibility (see Notebook Section 1)
-│   └── merged_application_data.csv  # Raw merged data for easy reproducibility (see Notebook Section 1)
+│   ├── train-test-splits/            # Pickled data splits for the initial model
+│   └── df_train_balanced.csv         # Original initial balanced training set (see Notebook Section 2.1)
+│   └── final_cleaned_data.csv        # Cleaned dataset for easy reproducibility (see Notebook Section 1)
+│   └── merged_application_data.csv   # Raw merged data for easy reproducibility (see Notebook Section 1)
 ├── models/
 │   └── mljar_results/
-│   └── xgb_model.joblib             # The pre-trained initial model file
-├── fraud_detection_pipeline.ipynb   # Main notebook including dataset cleaning, initial model training, evaluation and testing
-├── main.py                          # FastAPI application for serving predictions
-├── register_initial_model.py        # Script to register the first model and seed data
-├── retrain_model.py                 # Script for the automated retraining process
-├── requirements.txt                 # Project dependencies
-├── requirements_dev.txt             # Developer dependencies
-├── last_retrained_month.txt         # Keeps track of last month automatically retrained using Actions
+│   └── xgb_model.joblib              # The pre-trained initial model file
+├── src/
+│   └── api/
+│   │   └── main.py                   # FastAPI app for serving predictions
+│   └── training/
+│   │   ├── register_initial_model.py # Script to register the first model and seed data
+│   │   └── retrain_model.py          # Script for the automated retraining process
+├── metadata/
+│   └── last_retrained_month.txt      # Keeps track of last month automatically retrained using Actions
+├── fraud_detection_pipeline.ipynb    # Main notebook including dataset cleaning, initial model training, evaluation and testing
+├── requirements.txt                  # Project dependencies
+├── requirements_dev.txt              # Developer dependencies
 └── README.md
 ```
 
