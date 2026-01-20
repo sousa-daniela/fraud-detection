@@ -111,7 +111,7 @@ Ensure you have sourced your environment variables before running commands: `sou
 1.  **Run the Initial Model Registration:**
     This script registers the first model and uploads the initial training dataset to S3.
     ```bash
-    python register_initial_model.py
+    python src/training/register_initial_model.py
     ```
 2.  **Start the MLflow UI:**
     ```bash
